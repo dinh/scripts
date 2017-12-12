@@ -44,7 +44,7 @@ for DB in $DATABASES; do
     # exclude the default databases
     if [[ "$DB" != "information_schema" ]] && [[ "$DB" != "performance_schema" ]] && [[ "$DB" != "mysql" ]] && [[ "$DB" != _* ]] ; then
         echo "Dumping database: $DB"
-        # safe current date, for example:  20171220153421
+        # save current date, for example:  20171220153421
         TIMESTAMP=$(date +%Y%m%d%H%M%S)
 
         # build path to file, for example: /var/mysql/20171220153421.my_database.sql

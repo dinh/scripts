@@ -37,7 +37,7 @@ if [[ -z "$MYSQL_USER" ]] || [[ -z "$MYSQL_PASSWORD" ]]; then
 fi
 
 # get all databases
-DATABASES=$(mysql -u $MYSQL_USER -p$MYSQL_PASSWORD -e "SHOW DATABASES;" | tr -d "| " | grep -v Database)
+DATABASES=$(mysql -u"$MYSQL_USER" -p"$MYSQL_PASSWORD" -e "SHOW DATABASES;" | tr -d "| " | grep -v Database)
 
 # loop existing databases
 for DB in $DATABASES; do

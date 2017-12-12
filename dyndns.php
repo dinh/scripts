@@ -23,16 +23,16 @@
     $password = 'SET_YOUR_PASSWORD_HERE';
     $ip_file = "saved_ip.txt";
     $sent_password = $_GET["password"];
-    $ip = $_GET["ip"];
+    $sent_ip = $_GET["ip"];
 
     // ip file exists
     if (file_exists($ip_file)) {
         // password and ip are sent as parameters -> we assume the router is making a request
-        if (isset($sent_password) && isset($ip)) {
+        if (isset($sent_password) && isset($sent_ip)) {
             if ($sent_password == $password) {
                 // password is correct. Save the ip
                 $file_handle = fopen("$ip_file", "w");
-                fwrite($file_handle, $ip);
+                fwrite($file_handle, $sent_ip);
                 fclose($file_handle);
             } else {
                 // wrong password. respond with 401

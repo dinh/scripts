@@ -47,7 +47,7 @@ for DB in $DATABASES; do
         # save current date, for example:  20171220153421
         TIMESTAMP=$(date +%Y%m%d%H%M%S)
 
-        # build path to file, for example: /var/mysql/20171220153421.my_database.sql
+        # build path to file, for example: /var/mysql-backup/20171220153421.my_database.sql
         DUMP_FILE=$BACKUP_FOLDER/$TIMESTAMP.$DB.sql
 
         # dump database
